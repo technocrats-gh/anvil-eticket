@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { InputNumber } from 'primereact/inputnumber';
+import { redirect } from "react-router";
 import { Formik, Field, Form } from 'formik';
 import axios from "axios";
 import Poster from "../images/stage-play.jpg";
@@ -19,7 +20,7 @@ function PaymentForm() {
     const instance = axios.create({
         baseURL: 'https://api.paystack.co',
         timeout: 3000,
-        headers: [{ 'Content-Type': 'application/json' }, { 'Authorization': `Bearer ${paystackKey}` }]
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${paystackKey}` }
     });
 
     const initialValues = {
@@ -64,9 +65,9 @@ function PaymentForm() {
                 }
             });
 
-            const authorizationUrl = response.data?.authorization_url;
+            const authorizationUrl = response.data?.data?.authorization_url;
             if (authorizationUrl) {
-                window.location.href = authorizationUrl;
+                redirect(authorizationUrl);
             } else {
                 console.error("Authorization URL missing in response");
             }
