@@ -25,6 +25,7 @@ function SmsNotification() {
     network,
     reference,
     other_ref,
+    cast,
     totalCost,
     ticketNumber,
   } = JSON.parse(decodeURI(userInfo));
@@ -38,8 +39,15 @@ function SmsNotification() {
   const generateRandomCode = () => {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
-    for (let i = 0; i < 4; i++) {
-      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    if (cast.length > 1) {
+      result = cast;
+      for (let i = 0; i < 2; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+    } else {
+      for (let i = 0; i < 4; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
     }
     return result;
   };
@@ -80,16 +88,16 @@ function SmsNotification() {
   const sendSms = async () => {
     const smsData = {
       recipient: [contact],
-      sender: 'AnvilProd',
+      sender: 'AnvilProd', // Sender ID
       message: `Hello ${firstName}, your ticket code for Dedei Ashikishan is ${ticketCode}. Please present this code at the gate. Thank you for your purchase!`,
       is_schedule: 'false',
       schedule_date: ''
     };
 
     try {
-      const response = await axios.post(`https://api.smsgh.com/v3/messages/send?key=${mnotifyKey}`, smsData, {
+      const response = await axios.post(`https://api.mnotify.com/api/sms/quick?key=${mnotifyKey}`, smsData, {
         headers: {
-          'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
       });
 
@@ -97,9 +105,6 @@ function SmsNotification() {
         console.log('SMS sent successfully');
         setSmsSent(true);
         localStorage.removeItem('customerMetaData'); // Clear user info after sending SMS
-        setInterval(() => {
-          redirect('/');
-        }, 5000); // Redirect after 5 seconds
       } else {
         console.warn('SMS may not have been sent successfully', response.data);
         setSmsSent(true); // still continue UI flow
@@ -128,6 +133,7 @@ function SmsNotification() {
         network,
         reference,
         other_ref,
+        cast,
         totalCost,
         ticketCode,
         ticketNumber,
