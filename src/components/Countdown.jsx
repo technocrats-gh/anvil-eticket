@@ -22,33 +22,33 @@ function Countdown() {
 
     return (
         <div className="flex justify-content-center gap-4 text-center w-full">
-            <div class="grid grid-nogutter w-full">
-                <div class="col-12 md:col-6 lg:col-3 p-3">
-                    <div class="text-center p-5 border-round flex flex-column" style={{ backgroundColor: "#fdeaec" }}>
-                        <i class="pi pi-calendar-times text-4xl block mb-4" style={{ color: "#EA2F3D" }}></i>
-                        <span class="text-900 text-5xl">{timeLeft.days}</span>
-                        <div class=" mt-3 font-medium" style={{ color: "#EA2F3D" }}>DAYS</div>
+            <div className="grid grid-nogutter w-full">
+                <div className="col-12 md:col-6 lg:col-3 p-3">
+                    <div className="text-center p-5 border-round flex flex-column" style={{ backgroundColor: "#fdeaec" }}>
+                        <i className="pi pi-calendar-times text-4xl block mb-4" style={{ color: "#EA2F3D" }}></i>
+                        <span className="text-900 text-5xl">{timeLeft.days}</span>
+                        <div className=" mt-3 font-medium" style={{ color: "#EA2F3D" }}>DAYS</div>
                     </div>
                 </div>
-                <div class="col-12 md:col-6 lg:col-3 p-3">
-                    <div class="bg-purple-50 text-center p-5 border-round flex flex-column">
-                        <i class="text-purple-500 pi pi-clock text-4xl block mb-4"></i>
-                        <span class="text-900 text-5xl">{timeLeft.hours}</span>
-                        <div class="text-purple-700 mt-3 font-medium">HOURS</div>
+                <div className="col-12 md:col-6 lg:col-3 p-3">
+                    <div className="bg-purple-50 text-center p-5 border-round flex flex-column">
+                        <i className="text-purple-500 pi pi-clock text-4xl block mb-4"></i>
+                        <span className="text-900 text-5xl">{timeLeft.hours}</span>
+                        <div className="text-purple-700 mt-3 font-medium">HOURS</div>
                     </div>
                 </div>
-                <div class="col-12 md:col-6 lg:col-3 p-3">
-                    <div class="bg-teal-50 text-center p-5 border-round flex flex-column">
-                        <i class="text-teal-500 pi pi-hourglass text-4xl block mb-4"></i>
-                        <span class="text-900 text-5xl">{timeLeft.minutes}</span>
-                        <div class="text-teal-700 mt-3 font-medium">MINUTES</div>
+                <div className="col-12 md:col-6 lg:col-3 p-3">
+                    <div className="bg-teal-50 text-center p-5 border-round flex flex-column">
+                        <i className="text-teal-500 pi pi-hourglass text-4xl block mb-4"></i>
+                        <span className="text-900 text-5xl">{timeLeft.minutes}</span>
+                        <div className="text-teal-700 mt-3 font-medium">MINUTES</div>
                     </div>
                 </div>
-                <div class="col-12 md:col-6 lg:col-3 p-3">
-                    <div class="bg-indigo-50 text-center p-5 border-round flex flex-column">
-                        <i class="text-indigo-500 pi pi-stopwatch text-4xl block mb-4"></i>
-                        <span class="text-900 text-5xl">{timeLeft.seconds}</span>
-                        <div class="text-indigo-700 mt-3 font-medium">SECONDS</div>
+                <div className="col-12 md:col-6 lg:col-3 p-3">
+                    <div className="bg-indigo-50 text-center p-5 border-round flex flex-column">
+                        <i className="text-indigo-500 pi pi-stopwatch text-4xl block mb-4"></i>
+                        <span className="text-900 text-5xl">{timeLeft.seconds}</span>
+                        <div className="text-indigo-700 mt-3 font-medium">SECONDS</div>
                     </div>
                 </div>
             </div>

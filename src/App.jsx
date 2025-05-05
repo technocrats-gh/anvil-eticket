@@ -22,12 +22,12 @@ export default function App() {
 
         <Sponsors />
 
-        <div class="surface-ground mx-4">
-          <div class="flex flex-wrap relative overflow-hidden" style={{ borderRadius: '1rem', background: "radial-gradient(100% 1126.49% at 100% 0%, rgb(255, 255, 255) 0%, rgb(143, 90, 38) 100%), #212121" }}>
-            <div class="px-6 py-8">
-              <span class="uppercase text-green-100 font-bold">BE THE FIRST ONE</span>
-              <div class="text-white text-medium text-5xl mt-3 mb-5 ">Reserve your seat Today!</div>
-              <button class="p-ripple appearance-none p-3 bg-green-100 hover:bg-cyan-300 cursor-pointer transition-colors font-medium gray-900 border-none p-component transition-colors transition-duration-150"
+        <div className="surface-ground mx-4">
+          <div className="flex flex-wrap relative overflow-hidden" style={{ borderRadius: '1rem', background: "radial-gradient(100% 1126.49% at 100% 0%, rgb(255, 255, 255) 0%, rgb(143, 90, 38) 100%), #212121" }}>
+            <div className="px-6 py-8">
+              <span className="uppercase text-green-100 font-bold">BE THE FIRST ONE</span>
+              <div className="text-white text-medium text-5xl mt-3 mb-5 ">Reserve your seat Today!</div>
+              <button className="p-ripple appearance-none p-3 bg-green-100 hover:bg-cyan-300 cursor-pointer transition-colors font-medium gray-900 border-none p-component transition-colors transition-duration-150"
                 style={{ borderRadius: "35px" }} onClick={() => navigate('payment')}>
                 Buy Your Ticket
               </button>
