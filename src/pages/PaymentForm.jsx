@@ -168,7 +168,7 @@ function PaymentForm() {
                                                                     {props.values.reference === "CAST" &&
                                                                         <div className="col-12 field mb-4">
                                                                             <Field as="select" id="cast" name="cast" className="p-inputtext lg:w-full" style={{ borderColor: props.errors.cast ? "red" : "" }} validate={validate}>
-                                                                                <option value="">How did you hear of Dedi Ashikishan?</option>
+                                                                                <option value="">Which cast member referred you?</option>
                                                                                 <option value="KS">KOJO SACKEY</option>
                                                                                 <option value="BA">BELINDA APEDOE</option>
                                                                                 <option value="NV">NHADJIL VAN-DYCK</option>
