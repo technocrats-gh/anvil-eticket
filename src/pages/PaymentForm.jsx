@@ -174,7 +174,7 @@ function PaymentForm() {
                                                                                 <option value="NV">NHADJIL VAN-DYCK</option>
                                                                                 <option value="SK">SAMUEL KODIE</option>
                                                                                 <option value="BK">BRIGHT KOBBSON</option>
-                                                                                <option value="TY">TRINA YOUNG</option>
+                                                                                <option value="TY">PATRICIA AMEWUSIKA</option>
                                                                             </Field>
                                                                         </div>
                                                                     }

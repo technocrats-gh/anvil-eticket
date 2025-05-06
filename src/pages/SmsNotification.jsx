@@ -101,7 +101,7 @@ function SmsNotification() {
         },
       });
 
-      if (response.data && response.data.Status === "success") {
+      if (response.data && response.data.status === "success") {
         console.log('SMS sent successfully');
         setSmsSent(true);
         localStorage.removeItem('customerMetaData'); // Clear user info after sending SMS
