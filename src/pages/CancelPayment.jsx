@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 function CancelPayment() {
     const navigate = useNavigate();
     const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+    const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
 
     return (
         <div className="flex flex-column align-items-center justify-content-center min-h-screen p-4 surface-0 text-center h-full" style={{ fontFamily: "Roboto Condensed, sans-serif" }}>
@@ -13,7 +14,8 @@ function CancelPayment() {
             <h1 className="text-3xl font-bold mb-2">Cancelled Payment?</h1>
             <p className="text-lg mb-4">Ouch, something seems to have gone wrong. Kindly purchase your ticket again.</p>
             <p className="text-lg mb-4">
-                If you have any questions, please contact us at <a href={`mailto:${contactEmail}`} className="text-blue-500 underline">{contactEmail}</a>.
+                If you have any questions, please contact us at <a href={`mailto:${contactEmail}`} className="text-blue-500 underline">{contactEmail}</a>
+                {" "}or <a href={`tel:${contactPhone}`} className="text-blue-500 underline">{contactPhone}</a>.
             </p>
 
             <div className="flex justify-content-center mb-8">
