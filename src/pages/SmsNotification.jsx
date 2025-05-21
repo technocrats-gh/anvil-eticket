@@ -87,11 +87,11 @@ function SmsNotification() {
 
   const sendSms = async () => {
     const smsData = {
-      recipient: [contact],
-      sender: 'AnvilProd', // Sender ID
-      message: `Hello ${firstName}, your ticket code for Dedei Ashikishan is ${ticketCode}. Please present this code at the gate. Thank you for your purchase!`,
-      is_schedule: 'false',
-      schedule_date: ''
+      "recipient": [contact.toString()],
+      "sender": 'AnvilProd', // Sender ID
+      "message": `Hello ${firstName}, your ticket code for Dedei Ashikishan is ${ticketCode}. Please present this code at the gate. Thank you for your purchase!`,
+      "is_schedule": 'false',
+      "schedule_date": ''
     };
 
     try {
