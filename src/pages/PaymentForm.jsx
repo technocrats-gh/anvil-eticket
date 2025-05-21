@@ -37,6 +37,7 @@ function PaymentForm() {
     };
 
     const onSubmit = async (values) => {
+        let fee = Math.round((totalCost * 0.0195) * 100) / 100;
         const customerMetaData = {
             firstName: values.firstName,
             lastName: values.lastName,
@@ -47,7 +48,7 @@ function PaymentForm() {
             reference: values.reference,
             other_ref: values.other_ref,
             cast: values.cast,
-            totalCost: totalCost,
+            totalCost: totalCost + fee,
             ticketNumber: ticketNumber,
         };
 
@@ -58,7 +59,7 @@ function PaymentForm() {
         try {
             const response = await instance.post('/transaction/initialize', {
                 email: values.email,
-                amount: totalCost * 100, // Paystack expects amount in pesewas
+                amount: (totalCost + fee) * 100, // Paystack expects amount in pesewas
                 currency: 'GHS',
                 // reference: 'DedeiAshikishan',
                 callback_url: `${baseURL}/sms-notification`,
